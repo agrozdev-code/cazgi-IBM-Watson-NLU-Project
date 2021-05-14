@@ -39,13 +39,11 @@ app.get('/url/emotion', (req, res) => {
 	getNLUInstance()
 		.analyze(analyzeParams)
 		.then((analysisResults) => {
-			// console.log(JSON.stringify(analysisResults.result, null, 2));
 			res.send(analysisResults.result.emotion.document.emotion);
 		})
 		.catch((err) => {
 			console.log('error:', err);
 		});
-	// return res.send({ happy: '90', sad: '10' });
 });
 
 app.get('/url/sentiment', (req, res) => {
@@ -75,13 +73,11 @@ app.get('/text/emotion', (req, res) => {
 	getNLUInstance()
 		.analyze(analyzeParams)
 		.then((analysisResults) => {
-			// console.log(JSON.stringify(analysisResults.result, null, 2));
 			res.send(analysisResults.result.emotion.document.emotion);
 		})
 		.catch((err) => {
 			console.log('error:', err);
 		});
-	// return res.send({ happy: '10', sad: '90' });
 });
 
 app.get('/text/sentiment', (req, res) => {
